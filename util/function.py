@@ -27,13 +27,6 @@ def get_value(_keys, _line):
             _result=_line[(_position + len(_keyword)+1):]
             return (_keyword, _result)
 
-for line in file:
-    result = get_value(keywords, line)
-    #print(result)
-    if result != None:
-        keyword, data = result
-        print(keyword, data)
-
 
 def instrument_value(_value):
     print(_value)
@@ -48,9 +41,24 @@ def ticker_value(_value):
     print(_value)
 
 
-if keyword == keywords[0]:
-    instrument_value = instrument_value(data):
+for line in file:
+    result = get_value(keywords, line)
+    #print(result)
+    if result != None:
+        keyword, data = result
+        print(keyword, data)
 
+        if keyword == keywords[0]:
+            instrument_data = instrument_value(data)
+
+        if keyword == keywords[1]:
+            ticker_data = ticker_value(data)
+
+        if keyword == keywords[2]:
+            market_depth_data = market_value(data)
+
+        if keyword == keywords[3]:
+            recent_data = recent_value(data)
 
 
 

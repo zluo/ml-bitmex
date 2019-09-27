@@ -42,6 +42,6 @@ file.close()
 for key in key_words_dic:
     df = key_words_dic[key]
     print(df)
-    file_name = key.replace(' ', '_')[:-2] + '.csv'
+    file_name = key.replace(' ', '_')[:-1] + '.csv'
     print(file_name)
     df.to_csv(file_name, index = None, header=True)
